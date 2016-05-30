@@ -8,7 +8,7 @@ Click a button, get a random quote! Tweet it if you like it.
 
 ### Why
 A mini project based on [freecodecamp's challenge](https://www.freecodecamp.com/challenges/build-a-random-quote-machine).
-This mini project is intended to fufill the requirements and more! :laughing:
+This mini project is intended to fulfil the requirements and more! :laughing:
 
 
 ### How
