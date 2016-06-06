@@ -22,7 +22,13 @@
         <h1 id="quote">Believe you can and you're halfway there.</h1>
         <h2 id="quotee">Theodore Roosevelt</h2>
         <button id="getQuote" class="btn">Get Another</button>
-        <button>twitter placeholder</button>
+        <!-- tweet button -->
+        <button class="btn">
+          <a href="https://twitter.com/intent/tweet?via=dubsta&text=test">
+              Tweet this quote
+          </a>
+        </button>
+        <!-- end tweet -->
       </section>
     
       <!-- Footer -->
@@ -41,6 +47,9 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
         <script src="js/main.js"></script>
-
+        <!-- twitter script -->
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+        </script>
+        <!-- end twitter -->
     </body>
 </html>
