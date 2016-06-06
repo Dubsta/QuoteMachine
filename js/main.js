@@ -12,8 +12,12 @@ $(document).ready(function(){
 }); // end document.ready
 
 function renderQuote(data) {
-	$('#quote').text(data.quoteText);
-	$('#quotee').text(data.quoteAuthor);
+	$('#quote').fadeOut(function(){
+		$(this).text(data.quoteText).fadeIn();
+	});
+	$('#quotee').fadeOut(function(){
+		$(this).text(data.quoteAuthor).fadeIn();
+	});
 }
 
 function quoteFromAPI () {
