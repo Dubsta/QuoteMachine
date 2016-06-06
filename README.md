@@ -16,5 +16,6 @@ This mini project is intended to fulfil the requirements and more! :laughing:
 - [x] Version control through git
 - [x] Uses [HTML5 boilerplate](https://html5boilerplate.com/)
 - [ ] Bootstrap CSS framework
+- [ ] API call to [forismatic](http://forismatic.com)
 - [ ] Jquery animations
-- [ ] 'local' quote database if the ajax call fails.
+- [ ] 'local' quote database if the ajax call fails

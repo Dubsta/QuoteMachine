@@ -7,20 +7,26 @@ Look up and load new quotes.
  - Load quote into the page using jquery
 */
 
+$(document).ready(function(){
+	$('#getQuote').click(quoteFromAPI);
+}); // end document.ready
+
+function renderQuote(data) {
+	$('#quote').text(data.quoteText);
+	$('#quotee').text(data.quoteAuthor);
+}
 
 function quoteFromAPI () {
 	var APIendpoint = 'http://api.forismatic.com/api/1.0/?jsonp=?'
 	var options = {
-		lang : "en",
-		method : "getQuote",
-		format : "jsonp",
+		lang : 'en',
+		method : 'getQuote',
+		format : 'jsonp',
 	};
 	function callback (data, status, jrXHR) {
-		console.log("The status is " + status);
-		console.log("The quote is: " + data.quoteText);
+		console.log('The status is ' + status);
+		renderQuote(data);		
 	}
 
 	$.getJSON(APIendpoint, options, callback);
 }
-
-quoteFromAPI();
