@@ -13,12 +13,16 @@ $(document).ready(function(){
 }); // end document.ready
 
 function renderQuote(data) {
+	$('.quoteBox button').prop('disabled', true);
+	var a = $.Deferred();
+	var b = $.Deferred();
+
 	// display new quote
 	$('#quote').fadeOut(function(){
-		$(this).text(data.quoteText).fadeIn();
+		$(this).text(data.quoteText).fadeIn(function() {a.resolve();});
 	});
 	$('#quotee').fadeOut(function(){
-		$(this).text(data.quoteAuthor).fadeIn();
+		$(this).text(data.quoteAuthor).fadeIn(function() {b.resolve();});
 	});
 
 	// update twitter quote
@@ -26,11 +30,13 @@ function renderQuote(data) {
 	newHref += data.quoteText;
 	if (data.quoteAuthor !== '') { 
 		newHref += ' - ' + data.quoteAuthor;
-	}	
+	}
 	$('#twitterAnchor').attr('href', newHref);
 
-	// enable buttons
-	$('.quoteBox button').prop('disabled', false);
+	// enable buttons when animations are finished
+	$.when(a, b).done(function() {
+		$('.quoteBox button').prop('disabled', false);
+	});
 }
 
 function generateQuote () {
