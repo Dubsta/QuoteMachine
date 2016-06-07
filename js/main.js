@@ -1,35 +1,36 @@
-/*
-Look up and load new quotes.
-
- - Lookup new random quotes using forismatic API found here:
- 	http://forismatic.com/en/api/	
- - If API call fails, get a random quote from a small local database
- - Load quote into the page using jquery
-*/
+/******************************
+  Random Quote Machine
+  Michael Atkinson
+******************************/
 
 $(document).ready(function(){
 	renderQuote(localQuote());
 	$('#getQuote').click(generateQuote);
 }); // end document.ready
 
-function renderQuote(data) {
+function renderQuote(quote) {
+/*
+ * When passed a quote object with approporiate properties,
+ * fades the quote in, updating the twitter text.
+ * buttons are disabled and renabled after animations
+*/
 	$('.quoteBox button').prop('disabled', true);
 	var a = $.Deferred();
 	var b = $.Deferred();
 
 	// display new quote
 	$('#quote').fadeOut(function(){
-		$(this).text(data.quoteText).fadeIn(function() {a.resolve();});
+		$(this).text(quote.quoteText).fadeIn(function() {a.resolve();});
 	});
 	$('#quotee').fadeOut(function(){
-		$(this).text(data.quoteAuthor).fadeIn(function() {b.resolve();});
+		$(this).text(quote.quoteAuthor).fadeIn(function() {b.resolve();});
 	});
 
 	// update twitter quote
 	var newHref = 'https://twitter.com/intent/tweet?via=dubsta&text=';
-	newHref += data.quoteText;
-	if (data.quoteAuthor !== '') { 
-		newHref += ' - ' + data.quoteAuthor;
+	newHref += quote.quoteText;
+	if (quote.quoteAuthor !== '') { 
+		newHref += ' - ' + quote.quoteAuthor;
 	}
 	$('#twitterAnchor').attr('href', newHref);
 
@@ -40,10 +41,14 @@ function renderQuote(data) {
 }
 
 function generateQuote () {
-
+/*
+ * Attempts to get a new quote object from forismatic API by ajax
+ * On success calls render on quote
+ * On timeout calls render on a localquote
+*/
+	// disable buttons to be re-enabled in renderQuote()
 	$('.quoteBox button').prop('disabled', true);
 
-	// ajax
 	var APIendpoint = 'http://api.forismatic.com/api/1.0/?jsonp=?'
 	var URLqueryOptions = {
 		lang : 'en',
@@ -66,13 +71,49 @@ function generateQuote () {
     dataType: 'json',
     success: successCallback,
     error: failCallback,
-    timeout : 2500
+    timeout : 1000
 	});
-	// end ajax
 }
 
 function localQuote() {
-	// uses object localQuotes from another script
+/*
+ * Returns a quote object from locally stored quotes
+*/
+	var localQuotes = 
+	[
+		{
+			quoteText : "Believe you can and you're halfway there.",
+			quoteAuthor : "Theodore Roosevelt"
+		},
+		{
+			quoteText : "Do or do not, there is no try.",
+			quoteAuthor : "Yoda"
+		},
+		{
+			quoteText : "If things seem under control, you’re just not going fast enough.",
+			quoteAuthor : "Mario Andretti"
+		},
+		{
+			quoteText : "I do not fear computers. I fear the lack of them",
+			quoteAuthor : "Isaac Asimov"
+		},
+		{
+			quoteText : "I'll be back.",
+			quoteAuthor : "Arnold Schwarznegger"
+		},
+		{
+			quoteText : "I never said most of the things I said.",
+			quoteAuthor : "Yogi Berra"
+		},
+		{
+			quoteText : "All you need is love",
+			quoteAuthor : "John Lennon"
+		},
+		{
+			quoteText : "If I had nine hours to chop down a tree, I’d spend the first six sharpening my ax.",
+			quoteAuthor : "Abraham Lincoln"
+		}
+	];
 	var randomIndex = Math.floor(Math.random() * localQuotes.length);
 	return localQuotes[randomIndex];
 }
