@@ -44,7 +44,7 @@ function generateQuote () {
 	$('.quoteBox button').prop('disabled', true);
 
 	// ajax
-	var APIendpoint = 'http://api.forismatic.com/api/1.5/?jsonp=?'
+	var APIendpoint = 'http://api.forismatic.com/api/1.0/?jsonp=?'
 	var URLqueryOptions = {
 		lang : 'en',
 		method : 'getQuote',
