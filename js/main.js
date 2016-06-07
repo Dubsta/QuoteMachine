@@ -28,9 +28,9 @@ function renderQuote(quote) {
 
 	// update twitter quote
 	var newHref = 'https://twitter.com/intent/tweet?via=dubsta&text=';
-	newHref += quote.quoteText;
+	newHref += encodeURIComponent(quote.quoteText);
 	if (quote.quoteAuthor !== '') { 
-		newHref += ' - ' + quote.quoteAuthor;
+		newHref += ' - ' + encodeURIComponent(quote.quoteAuthor);
 	}
 	$('#twitterAnchor').attr('href', newHref);
 
@@ -71,7 +71,7 @@ function generateQuote () {
     dataType: 'json',
     success: successCallback,
     error: failCallback,
-    timeout : 1000
+    timeout : 1500
 	});
 }
 
