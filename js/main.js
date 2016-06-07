@@ -8,6 +8,7 @@ Look up and load new quotes.
 */
 
 $(document).ready(function(){
+	useLocalQuote();
 	$('#getQuote').click(generateQuote);
 }); // end document.ready
 
@@ -48,4 +49,10 @@ function generateQuote () {
 	}
 
 	$.getJSON(APIendpoint, options, callback);
+}
+
+function useLocalQuote() {
+	// uses object localQuotes from another script
+	var randomIndex = Math.floor(Math.random() * localQuotes.length);
+	renderQuote(localQuotes[randomIndex]);
 }
