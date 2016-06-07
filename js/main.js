@@ -43,18 +43,32 @@ function generateQuote () {
 
 	$('.quoteBox button').prop('disabled', true);
 
-	var APIendpoint = 'http://api.forismatic.com/api/1.0/?jsonp=?'
-	var options = {
+	// ajax
+	var APIendpoint = 'http://api.forismatic.com/api/1.5/?jsonp=?'
+	var URLqueryOptions = {
 		lang : 'en',
 		method : 'getQuote',
 		format : 'jsonp',
 	};
-	function callback (data, status, jrXHR) {
+	var successCallback = function (data, status) {
 		console.log('The status is ' + status);
 		renderQuote(data);		
-	}
+	};
+	var failCallback = function (data, status, error) {
+		console.log("Looks like an error");
+		console.log(data.status + "  " + error);
+		useLocalQuote();
+	};
 
-	$.getJSON(APIendpoint, options, callback);
+	$.ajax({
+    url: APIendpoint,
+    data: URLqueryOptions,
+    dataType: 'json',
+    success: successCallback,
+    error: failCallback,
+    timeout : 2500
+	});
+	// end ajax
 }
 
 function useLocalQuote() {
