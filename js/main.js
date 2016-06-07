@@ -8,7 +8,7 @@ Look up and load new quotes.
 */
 
 $(document).ready(function(){
-	useLocalQuote();
+	renderQuote(localQuote());
 	$('#getQuote').click(generateQuote);
 }); // end document.ready
 
@@ -57,7 +57,7 @@ function generateQuote () {
 	var failCallback = function (data, status, error) {
 		console.log("Looks like an error");
 		console.log(data.status + "  " + error);
-		useLocalQuote();
+		renderQuote(localQuote());
 	};
 
 	$.ajax({
@@ -71,8 +71,8 @@ function generateQuote () {
 	// end ajax
 }
 
-function useLocalQuote() {
+function localQuote() {
 	// uses object localQuotes from another script
 	var randomIndex = Math.floor(Math.random() * localQuotes.length);
-	renderQuote(localQuotes[randomIndex]);
+	return localQuotes[randomIndex];
 }
