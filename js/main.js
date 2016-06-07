@@ -8,19 +8,34 @@ Look up and load new quotes.
 */
 
 $(document).ready(function(){
-	$('#getQuote').click(quoteFromAPI);
+	$('#getQuote').click(generateQuote);
 }); // end document.ready
 
 function renderQuote(data) {
+	// display new quote
 	$('#quote').fadeOut(function(){
 		$(this).text(data.quoteText).fadeIn();
 	});
 	$('#quotee').fadeOut(function(){
 		$(this).text(data.quoteAuthor).fadeIn();
 	});
+
+	// update twitter quote
+	var newHref = 'https://twitter.com/intent/tweet?via=dubsta&text=';
+	newHref += data.quoteText;
+	if (data.quoteAuthor !== '') { 
+		newHref += ' - ' + data.quoteAuthor;
+	}	
+	$('#twitterAnchor').attr('href', newHref);
+
+	// enable buttons
+	$('.quoteBox button').prop('disabled', false);
 }
 
-function quoteFromAPI () {
+function generateQuote () {
+
+	$('.quoteBox button').prop('disabled', true);
+
 	var APIendpoint = 'http://api.forismatic.com/api/1.0/?jsonp=?'
 	var options = {
 		lang : 'en',
