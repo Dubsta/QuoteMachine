@@ -10,13 +10,18 @@ $(document).ready(function(){
 
 function renderQuote(quote) {
 /*
- * When passed a quote object with approporiate properties,
- * fades the quote in, updating the twitter text.
+ * When passed a quote object,fades the quote in.
+ * updates the twitter text.
  * buttons are disabled and renabled after animations
 */
-	$('.quoteBox button').prop('disabled', true);
+	buttonsOff();
+
 	var a = $.Deferred();
 	var b = $.Deferred();
+
+	// error checking
+	if (quote.quoteText === undefined) quote.quoteText = '';
+	if (quote.quoteAuthor === undefined) quote.quoteAuthor = '';
 
 	// display new quote
 	$('#quote').fadeOut(function(){
@@ -33,10 +38,11 @@ function renderQuote(quote) {
 		newHref += ' - ' + encodeURIComponent(quote.quoteAuthor);
 	}
 	$('#twitterAnchor').attr('href', newHref);
+	$('input').parent().attr('action', newHref);
 
 	// enable buttons when animations are finished
 	$.when(a, b).done(function() {
-		$('.quoteBox button').prop('disabled', false);
+		buttonsOn();
 	});
 }
 
@@ -46,10 +52,9 @@ function generateQuote () {
  * On success calls render on quote
  * On timeout calls render on a localquote
 */
-	// disable buttons to be re-enabled in renderQuote()
-	$('.quoteBox button').prop('disabled', true);
+	buttonsOff(); // to call buttonsOn() in renderQuote()
 
-	var APIendpoint = 'http://api.forismatic.com/api/1.0/?jsonp=?'
+	var APIendpoint = 'http://api.forismatic.com/api/1.0/?jsonp=?';
 	var URLqueryOptions = {
 		lang : 'en',
 		method : 'getQuote',
@@ -73,6 +78,24 @@ function generateQuote () {
     error: failCallback,
     timeout : 1500
 	});
+}
+
+function buttonsOff() {
+/*
+ * Disable #qetQuote and #twitterAnchor
+ * Start spinner
+*/
+	$('#getQuote').prop('disabled', true);
+	$('#twitterAnchor').addClass('not-active');
+}
+
+function buttonsOn() {
+/*
+ * Re-enable #qetQuote and #twitterAnchor
+ * End spinner
+*/
+	$('#getQuote').prop('disabled', false);
+	$('#twitterAnchor').removeClass('not-active');
 }
 
 function localQuote() {
