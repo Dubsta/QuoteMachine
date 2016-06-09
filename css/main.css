@@ -13,7 +13,33 @@ pointer-events: none;
   opacity: .65;
 }
 
-/*/* Spinner*/
+/**************************
+    FOOTER
+**************************/
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 20px;
+    text-align: center;
+}
+footer p {
+    display: inline-block;
+}
+footer button {
+    margin-left: 20px;
+}
+
+/* Last anchor */
+footer .hiddenAnchor {
+    margin-left: 20px;
+}
+/* End footer */
+
+/**************************
+    SPINNER
+**************************/
 .glyphicon-spin {
     -webkit-animation: spin 1000ms infinite linear;
     animation: spin 1000ms infinite linear;

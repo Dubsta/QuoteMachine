@@ -19,43 +19,45 @@
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
-    <!-- container starts -->
-    <div class="container"> 
+      <!-- main container starts -->
+      <div class="container"> 
+        <!-- quote box -->
+        <section class="quoteBox">
+          <h1 id="quote"></h1>
+          <h2 id="quotee"></h2>
+          <button id="getQuote" class="btn btn-default">
+            Get Another
+            <span id="spinner" class="glyphicon glyphicon-refresh glyphicon-spin"></span>
+          </button>
+          <!-- tweet psudobutton -->
+          <a id="twitterAnchor" class="btn btn-default">
+                Tweet this quote
+          </a> 
+          <!-- end tweet -->
+        </section>
+      </div> 
+      <!-- main container ends -->
 
-      <!-- quote box -->
-      <section class="quoteBox">
-        <h1 id="quote"></h1>
-        <h2 id="quotee"></h2>
-        <button id="getQuote" class="btn btn-default">
-          Get Another
-          <span id="spinner" class="glyphicon glyphicon-refresh glyphicon-spin"></span>
-        </button>
-        <!-- tweet psudobutton -->
-        <a id="twitterAnchor" class="btn btn-default">
-              Tweet this quote
-        </a> 
-        <!-- end tweet -->
-      </section>
-    
       <!-- Footer -->
-      <hr>
-      <footer>
+      <footer class="footer container">
+        <hr>
         <p>By Michael Atkinson</p>
-        <a href="http://www.mikeatkinson.tech">
-          <button class="btn btn-info">About me</button>
-        </a>
-        <a href="https://github.com/Dubsta/QuoteMachine">View this project on GitHub</a>
+          <a href="http://www.mikeatkinson.tech">
+            <button class="btn btn-info">
+              About me
+              <span class='glyphicon glyphicon-info-sign'></span>
+            </button>
+          </a>
+          <a class='hidden-xs hiddenAnchor' href="https://github.com/Dubsta/QuoteMachine">View this project on GitHub</a>
       </footer>
-    </div> 
-    <!-- /container ends -->
 
-        <!-- Scripts -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-        <script src="js/main.js"></script>
-        <!-- twitter script -->
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-        </script>
-        <!-- end twitter -->
+      <!-- Scripts -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+      <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+      <script src="js/main.js"></script>
+      <!-- twitter script -->
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+      </script>
+      <!-- end twitter -->  
     </body>
 </html>
