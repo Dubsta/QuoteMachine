@@ -5,6 +5,13 @@
 ### What
 Click a button, get a random quote! Tweet it if you like it.
 
+#### Features
+:wrench: *Well, some not  yet* :wrench:
+
+ - [x] Small built-in quote database if the ajax call fails
+ - [x] Quotes fade in smoothly
+ - [x] buttons are disabled while loading new quote, with visual feedback to user.
+ - [ ] Responsive design for mobile, medium and large screen sizes
 
 ### Why
 A mini project based on [freecodecamp's challenge](https://www.freecodecamp.com/challenges/build-a-random-quote-machine).
@@ -12,10 +19,8 @@ This mini project is intended to fulfil the requirements and more! :laughing:
 
 
 ### How
-:wrench: *Well, some not  yet* :wrench:
-- [x] Version control through git
-- [x] Uses [HTML5 boilerplate](https://html5boilerplate.com/)
-- [ ] Bootstrap CSS framework
-- [ ] API call to [forismatic](http://forismatic.com)
-- [ ] Jquery animations
-- [ ] 'local' quote database if the ajax call fails
+- Uses [HTML5 boilerplate](https://html5boilerplate.com/)
+- Version control through git
+- Bootstrap CSS framework
+- API call to [forismatic](http://forismatic.com)
+- Jquery animations
