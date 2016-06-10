@@ -22,21 +22,24 @@
       <!-- main container starts -->
       <div class="container"> 
         <!-- quote box -->
-        <section class="quoteBox">
+        <section id="quoteBox">
           <h1 id="quote"></h1>
           <h2 id="quotee"></h2>
-          <button id="getQuote" class="btn btn-default">
-            Get Another
-            <span id="spinner" class="glyphicon glyphicon-refresh glyphicon-spin"></span>
-          </button>
-          <!-- tweet psudobutton -->
-          <a id="twitterAnchor" class="btn btn-default">
-                Tweet this quote
-          </a> 
-          <!-- end tweet -->
+          
         </section>
       </div> 
       <!-- main container ends -->
+        <div class="buttonBox container">
+            <button id="getQuote" class="btn btn-success btn-block">
+              Get Another
+              <span id="spinner" class="glyphicon glyphicon-refresh glyphicon-spin"></span>
+            </button>
+            <!-- tweet psudobutton -->
+            <a id="twitterAnchor" class="btn btn-primary">
+                  Tweet this quote
+            </a>
+        </div>
+          <!-- end tweet -->
 
       <!-- Footer -->
       <footer class="footer container">

@@ -2,6 +2,30 @@
    Custom sytles for Random Quote Machine
    Michael Atkinson
    ======================================== */
+/**************************
+    MAIN BUTTONS
+**************************/
+
+.buttonBox {
+  width: 100%;
+  margin: 0 auto;
+  position: fixed;
+  bottom: 100px;
+  height: 20%;
+  box-sizing: border-box;
+}
+
+.buttonBox a, .buttonBox button {
+  margin: 1em auto;
+  width: 80%;
+  display: block;
+  height: 40%;
+  box-sizing: inherit;
+  font-size: large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .not-active {
 /* copy of bootstrap button:disabled */
@@ -12,6 +36,7 @@ pointer-events: none;
           box-shadow: none;
   opacity: .65;
 }
+
 
 /**************************
     FOOTER
