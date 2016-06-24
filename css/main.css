@@ -39,9 +39,18 @@ body {
 
 }
 
+#quoteBox {
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  overflow: scroll;
+}
+
 #quote {
   font-size: 30px;
   font-weight: 150;
+
 }
 
 #quotee {
