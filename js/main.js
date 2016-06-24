@@ -87,7 +87,7 @@ function buttonsOff() {
 */
     $('#getQuote').prop('disabled', true);
     $('#twitterAnchor').addClass('not-active');
-    $('#spinner').css('visibility', 'visible');
+    $('#spinner').addClass('glyphicon-spin');
 }
 
 function buttonsOn() {
@@ -97,7 +97,7 @@ function buttonsOn() {
 */
     $('#getQuote').prop('disabled', false);
     $('#twitterAnchor').removeClass('not-active');
-    $('#spinner').css('visibility', 'hidden');
+    $('#spinner').removeClass('glyphicon-spin');
 
 }
 

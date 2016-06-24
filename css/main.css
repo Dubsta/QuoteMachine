@@ -65,6 +65,11 @@ body {
   align-items: center;
 }
 
+.outline {
+  background: none;
+  color: white;
+}
+
 .not-active {
 /* copy of bootstrap button:disabled */
 pointer-events: none;
