@@ -65,10 +65,54 @@ body {
   align-items: center;
 }
 
+.buttonBox span {
+  padding: 0 0 0 15px;
+}
+
 .outline {
   background: none;
   color: white;
+  border-color: white;
 }
+
+/* Override bootstrap */
+.btn-default:hover,
+.btn-default:focus,
+.btn-default.focus,
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+  color: white;
+  background-color: transparent;
+  border-color: white;
+}
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+  background-image: none;
+}
+.btn-default.disabled,
+.btn-default[disabled],
+fieldset[disabled] .btn-default,
+.btn-default.disabled:hover,
+.btn-default[disabled]:hover,
+fieldset[disabled] .btn-default:hover,
+.btn-default.disabled:focus,
+.btn-default[disabled]:focus,
+fieldset[disabled] .btn-default:focus,
+.btn-default.disabled.focus,
+.btn-default[disabled].focus,
+fieldset[disabled] .btn-default.focus,
+.btn-default.disabled:active,
+.btn-default[disabled]:active,
+fieldset[disabled] .btn-default:active,
+.btn-default.disabled.active,
+.btn-default[disabled].active,
+fieldset[disabled] .btn-default.active {
+  background-color: transparent;
+  border-color: #ccc;
+}
+/* end bootstrap override */
 
 .not-active {
 /* copy of bootstrap button:disabled */
@@ -108,6 +152,10 @@ footer .hiddenAnchor {
 /**************************
     SPINNER
 **************************/
+#spinner {
+  padding: 0;
+}
+
 .glyphicon-spin {
     -webkit-animation: spin 1000ms infinite linear;
     animation: spin 1000ms infinite linear;
