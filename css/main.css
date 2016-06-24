@@ -39,6 +39,24 @@ body {
 
 }
 
+#quote {
+  font-size: 30px;
+  font-weight: 150;
+}
+
+#quotee {
+  font-size: 25px;
+  font-weight: 200;
+}
+
+#quoteeBox {
+  position: fixed;
+  bottom: 36%;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
 
 /**************************
     MAIN BUTTONS
