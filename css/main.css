@@ -59,7 +59,6 @@ body {
 }
 
 #quoteeBox {
-  position: fixed;
   bottom: 36%;
   left: 0;
   right: 0;
@@ -216,9 +215,13 @@ footer .hiddenAnchor {
 **************************/
 
 @media (min-width: 576px) {
-  /* hide white pannels on larger size*/
+  /* custom quote box for large screen */
   #quoteBox {
     overflow: visible;
     text-align: center;
+    border: 2px solid white;
+    margin-top: 100px;
+    border-radius: 25px;
+    padding: 50px;
   }
 }
