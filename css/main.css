@@ -3,6 +3,12 @@
    Michael Atkinson
    ======================================== */
 
+
+
+
+
+
+
 /**************************
     BACKGROUND AND COLORS
 **************************/
@@ -208,3 +214,15 @@ footer .hiddenAnchor {
     }
 }
 /* End spinner */
+
+
+/**************************
+    MEDIA QUERYS
+**************************/
+
+@media (min-width: 576px) {
+  /* hide white pannels on larger size*/
+  #quoteBox {
+    overflow: visible;
+  }
+}
