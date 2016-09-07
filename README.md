@@ -5,7 +5,7 @@
 ### What
 Click a button, get a random quote! Tweet it if you like it.
 
-#### Features
+### Features
 
  - [x] Small built-in quote database if the ajax call fails
  - [x] Quotes fade in smoothly
@@ -23,3 +23,10 @@ This mini project is intended to fulfil the requirements and more! :laughing:
 - Bootstrap CSS framework
 - API call to [forismatic](http://forismatic.com)
 - Jquery animations
+
+### Browser Support
+
+Basic testing for the following browsers on osX
+- Chrome 
+- Safari
+- Firefox

@@ -77,6 +77,7 @@ body {
   bottom: 100px;
   height: 20%;
   box-sizing: border-box;
+  text-align: center;
 }
 
 .buttonBox a, .buttonBox button {
@@ -87,10 +88,16 @@ body {
   height: 40%;
   box-sizing: inherit;
   font-size: large;
-  display: flex;
+  text-align: center;
   justify-content: center;
   align-items: center;
 }
+
+/* Fix for Safari button text alignment */
+.buttonBox a {
+  display: flex;
+}
+
 
 .buttonBox span {
   padding: 0 0 0 15px;
