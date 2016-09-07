@@ -3,12 +3,6 @@
    Michael Atkinson
    ======================================== */
 
-
-
-
-
-
-
 /**************************
     BACKGROUND AND COLORS
 **************************/
@@ -89,6 +83,7 @@ body {
 .buttonBox a, .buttonBox button {
   margin: 1em auto;
   width: 80%;
+  max-width: 600px;
   display: block;
   height: 40%;
   box-sizing: inherit;
@@ -224,5 +219,6 @@ footer .hiddenAnchor {
   /* hide white pannels on larger size*/
   #quoteBox {
     overflow: visible;
+    text-align: center;
   }
 }
