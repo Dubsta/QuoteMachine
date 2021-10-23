@@ -13,22 +13,22 @@ html {
 
 body {
 
-  /* IE10+ */ 
+  /* IE10+ */
   background-image: -ms-linear-gradient(top, #36D6A1 0%, #3366FF 100%);
 
-  /* Mozilla Firefox */ 
+  /* Mozilla Firefox */
   background-image: -moz-linear-gradient(top, #36D6A1 0%, #3366FF 100%);
 
-  /* Opera */ 
+  /* Opera */
   background-image: -o-linear-gradient(top, #36D6A1 0%, #3366FF 100%);
 
-  /* Webkit (Safari/Chrome 10) */ 
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #36D6A1), color-stop(100, #3366FF));
+  /* Webkit (Safari/Chrome 10) */
+  /*background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #36D6A1), color-stop(100, #3366FF));
 
-  /* Webkit (Chrome 11+) */ 
+  /* Webkit (Chrome 11+) */
   background-image: -webkit-linear-gradient(top, #36D6A1 0%, #3366FF 100%);
 
-  /* W3C Markup */ 
+  /* W3C Markup */
   background-image: linear-gradient(to bottom, #36D6A1 0%, #3366FF 100%);
 
   color: white;

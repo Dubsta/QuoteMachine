@@ -25,3 +25,10 @@ Basic testing for the following browsers on osX
 - Chrome 
 - Safari
 - Firefox
+
+### 2021 Revision TODOs
+- Consider moving quotes to json file
+- Update to ES6?
+- Revise JS
+- Check / refresh API key
+- Revise / condense font files if possible
